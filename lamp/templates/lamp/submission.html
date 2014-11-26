@@ -1,0 +1,27 @@
+
+   <div>
+    <h1>LAMP-HEAT Openstack</h1>
+    </div>
+
+    <div align="justify">
+    <!-- Map from urls views -->
+    <form action="{% url 'lamp:edited' %}" autocomplete="on" target="_self" method="post">
+    {% csrf_token %}
+        Image : <input name="image" value="{{x.image_x}}" </output><br>
+        <br>
+        Flavor : <input name="flavor" value="{{x.flavor_x}}" </output><br>
+        <br>
+        Key Name: <input name="key_name" value="{{x.key_name_x}}"><br>
+        <br>
+        Public Network ID: <input name="public_net_id" value="{{x.public_net_id_x}}"><br>
+        <br>
+        Public Subnet ID: <input name="public_subnet_id" value="{{x.public_subnet_id_x}}"><br>
+        <br>
+        Private Network ID: <input name="private_net_id" value="{{x.private_net_id_x}}"><br>
+        <br>
+        Private Subnet ID: <input name="private_subnet_id" value="{{x.private_subnet_id_x}}"><br>
+        <br>
+    <input type="submit" value="Edit">  
+    </form>
+    </div>
+

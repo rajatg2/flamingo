@@ -1,0 +1,19 @@
+<div>
+<h1>LAMP-HEAT Openstack</h1>
+</div>
+<div>
+<h4> Enter the type of deployement </h4>
+<h4> Enter 1 for LAMP" </h4>
+<h4> Enter 2 for Only Web </h4>
+<h4> Enter 3 for Only App </h4>
+<h4> Enter 4 for Only DB</h4>
+<h4> Enter 5 for Web outside and DB inside </h4>
+</div>
+
+<form action="{% url 'lamp:initialsubmission' %}" autocomplete="on" target="_self" method="post">
+{% csrf_token %}
+  Enter the type number here: <input type="number" name="lamptype"><br>
+  <br>
+  <input type="submit" value="Submit">  
+</form>
+</div>

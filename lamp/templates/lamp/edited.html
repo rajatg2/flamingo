@@ -1,0 +1,28 @@
+{% if y %}   
+   <div>
+    <h1>LAMP-HEAT Openstack</h1>
+    </div>
+
+    <div align="justify">
+    <!-- Map from urls views -->
+    <form action="{% url 'lamp:edited' %}" autocomplete="on" target="_self" method="post">
+    {% csrf_token %}
+        Image : <input name="image" value="{{y.image_y}}" </output><br>
+        <br>
+        Flavor : <input name="flavor" value="{{y.flavor_y}}" </output><br>
+        <br>
+        Key Name: <input name="key_name" value="{{y.key_name_y}}"><br>
+        <br>
+        Public Network ID: <input name="public_net_id" value="{{y.public_net_id_y}}"><br>
+        <br>
+        Public Subnet ID: <input name="public_subnet_id" value="{{y.public_subnet_id_y}}"><br>
+        <br>
+        Private Network ID: <input name="private_net_id" value="{{y.private_net_id_y}}"><br>
+        <br>
+        Private Subnet ID: <input name="private_subnet_id" value="{{y.private_subnet_id_y}}"><br>
+        <br>
+    <input type="submit" value="Final Submit">  
+    </form>
+    </div>
+{% endif %}
+

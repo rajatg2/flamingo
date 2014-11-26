@@ -1,0 +1,42 @@
+heat_template_version: 2014-10-05
+
+parameters:
+  key_name:
+    type: string
+    description: Enter the key name
+  image: 
+    type: string
+    description: enter image name
+  flavor:
+    type: string
+    description: type the flavour
+  public_net_id: 
+    type: string
+    description: type the public net id
+  public_subnet_id: 
+    type: string
+    description: type the public subnet id
+
+  
+resources:
+  server1:
+    type: OS::Nova::Server
+    properties:
+      name: Server1
+      image: { get_param: image }
+      flavor: { get_param: flavor }
+      key_name: { get_param: key_name }
+      networks: [{"port": { get_resource: server1_port_ext }}]
+       
+  server1_port_ext:
+    type: OS::Neutron::Port
+    properties:
+      network_id: { get_param: public_net_id }
+      fixed_ips:
+        - subnet_id: { get_param: public_subnet_id }
+
+
+outputs:
+  server1_public_ip:
+    description: IP address in public network
+    value: { get_attr: [ server1, first_address ] }

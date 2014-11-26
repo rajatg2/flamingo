@@ -1,0 +1,26 @@
+
+<div>
+<h1>LAMP-HEAT Openstack</h1>
+</div>
+
+<div align="justify">
+<!-- Map from urls views -->
+<form action="{% url 'lamp:submission' %}" autocomplete="on" target="_self" method="post">
+{% csrf_token %}
+  Image: <input type="text" name="image"><br>
+  <br>
+  Flavor: <input type="text" name="flavor"><br>
+  <br>
+  Key Name: <input type="text" name="key_name"><br>
+  <br>
+  Public Network ID: <input type="text" name="public_net_id"><br>
+  <br>
+  Public Subnet ID: <input type="text" name="public_subnet_id"><br>
+  <br>
+  Private Network ID: <input type="text" name="private_net_id"><br>
+  <br>
+  Private Subnet ID: <input type="text" name="private_subnet_id"><br>
+  <br>
+  <input type="submit" value="Submit">  
+</form>
+</div>
